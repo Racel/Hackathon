@@ -1,0 +1,380 @@
+------------------------------------------------------------------------
+r12845 | mhall | 2016-04-15 12:06:56 +1200 (Fri, 15 Apr 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/core/version.txt
+
+Version is now at 3.8.1-SNAPSHOT
+------------------------------------------------------------------------
+r12891 | mhall | 2016-04-15 21:42:07 +1200 (Fri, 15 Apr 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/core/Attribute.java
+
+New constructors for simpler creation of string attributes.
+------------------------------------------------------------------------
+r12892 | mhall | 2016-04-15 21:42:17 +1200 (Fri, 15 Apr 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/meta/Bagging.java
+
+Fixed memory leak: m_inBag was not set to null (only relevant if out-of-bag statistics were computed; also, effect quite small because m_inBag is 2D-array of booleans). Small code cleanup and Javadoc improvement. Inserted newlines in output of model.
+------------------------------------------------------------------------
+r12893 | mhall | 2016-04-15 21:42:29 +1200 (Fri, 15 Apr 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/trees/REPTree.java
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/trees/RandomTree.java
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/trees/m5/RuleNode.java
+
+Number of decimal places in output can now be specified for RandomTree and REPTree (and, consequently, also in RandomForest).
+------------------------------------------------------------------------
+r12901 | mhall | 2016-04-25 21:30:26 +1200 (Mon, 25 Apr 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/trees/RandomForest.java
+
+From Eibe: Fixed small (inconsequential) bug in setOptions(). Added methods so that debugging state, batch size and number of decimal places for RandomTree can be set in the GUIs.
+------------------------------------------------------------------------
+r12904 | mhall | 2016-04-25 21:33:03 +1200 (Mon, 25 Apr 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/estimators/MultivariateGaussianEstimator.java
+
+From Eibe: Improved runtime of MultivariateGaussianEstimator by making more use of MTJ.
+------------------------------------------------------------------------
+r12909 | mhall | 2016-04-26 16:32:11 +1200 (Tue, 26 Apr 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/core/metastore/XMLFileBasedMetaStore.java
+   M /branches/stable-3-8/weka/src/main/java/weka/core/xml/XMLSerialization.java
+
+Added a method to suppress the output of warnings related to loading older/newer versions etc.
+------------------------------------------------------------------------
+r12910 | mhall | 2016-04-26 16:32:20 +1200 (Tue, 26 Apr 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/StepManagerImpl.java
+
+Removed an unused settings variable
+------------------------------------------------------------------------
+r12925 | mhall | 2016-04-28 13:54:57 +1200 (Thu, 28 Apr 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/core/packageManagement/DefaultPackage.java
+
+Fixed a bug relating to ranged version constraints on the base weka system
+------------------------------------------------------------------------
+r12926 | mhall | 2016-04-28 13:55:51 +1200 (Thu, 28 Apr 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/core/packageManagement/VersionRangePackageConstraint.java
+
+Fixed a bug relating to ranged version constraints on the base weka system
+------------------------------------------------------------------------
+r12934 | mhall | 2016-05-04 09:15:44 +1200 (Wed, 04 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/core/DictionaryBuilder.java
+
+Fixed a bug that affected the -P option when used in conjuction with the IDF transform
+------------------------------------------------------------------------
+r12946 | mhall | 2016-05-09 14:13:55 +1200 (Mon, 09 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/GenericObjectEditor.java
+
+Prevented the instantiation of non class-based entries in the GUIEditors.props file. Previously, it was trying to enstantiate the boolean property ShowGlobalInfoToolTip, resulting in a warning message in the log.
+------------------------------------------------------------------------
+r12950 | mhall | 2016-05-09 14:25:30 +1200 (Mon, 09 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/core/ListOptions.java
+
+Made ListOptions implement CommandlineRunnable and use Utils.forName(), so that weka.Run and partial scheme name matching can be used
+------------------------------------------------------------------------
+r12957 | mhall | 2016-05-17 11:55:59 +1200 (Tue, 17 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/core/Utils.java
+
+joinOptions now checks for single and double quotes in an element when deciding whether character escaping is necessary. Previously, there was an issue with parsing the enclosure character list returned by the CSVLoader's options.
+------------------------------------------------------------------------
+r12965 | mhall | 2016-05-18 21:06:59 +1200 (Wed, 18 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/JSONFlowUtils.java
+
+Fixed a bug that affected the parsing of step properties involving files containing Windows separator charactors
+------------------------------------------------------------------------
+r12968 | mhall | 2016-05-19 09:25:11 +1200 (Thu, 19 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/experiment/SetupModePanel.java
+
+Fixed a couple of GUI bugs to do with switching between simple and advanced experiment setups.
+------------------------------------------------------------------------
+r12971 | mhall | 2016-05-19 09:26:28 +1200 (Thu, 19 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/experiment/Experimenter.java
+
+Fixed a couple of GUI bugs to do with switching between simple and advanced experiment setups.
+------------------------------------------------------------------------
+r12975 | mhall | 2016-05-20 09:45:24 +1200 (Fri, 20 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/WekaAlgorithmWrapper.java
+
+Now makes sure that the name property is either null or empty string before setting it based on the wrapped algorithm's class. This fixes a bug where custom names for wrapped algorithm steps were being overwritten during the loading process simply because the setWrappedAlgorithm() method got invoked after the name property had been set
+------------------------------------------------------------------------
+r12981 | mhall | 2016-05-23 22:17:56 +1200 (Mon, 23 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/WekaAlgorithmWrapper.java
+
+Fixed a bug introduced with the last change
+------------------------------------------------------------------------
+r12985 | mhall | 2016-05-23 22:19:40 +1200 (Mon, 23 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/WekaAlgorithmWrapper.java
+
+Removed a commented out line
+------------------------------------------------------------------------
+r13010 | mhall | 2016-05-26 22:47:24 +1200 (Thu, 26 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/GenericArrayEditor.java
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/GenericObjectEditor.java
+
+Fixed a bug where cancelling from the GOE when editing an entry in the GAE would change the entry in the GAE to a previously edited one.
+------------------------------------------------------------------------
+r13014 | mhall | 2016-05-31 09:36:14 +1200 (Tue, 31 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/functions/LinearRegression.java
+
+Fixed redundant output in listOptions().
+------------------------------------------------------------------------
+r13018 | mhall | 2016-05-31 09:44:36 +1200 (Tue, 31 May 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/core/packageManagement/DefaultPackageManager.java
+
+Now automatically deletes the installedPackageCache.ser file if there is a problem deserializing it. This allows Weka to continue functioning and the file will be regenerated automatically at the next start up
+------------------------------------------------------------------------
+r13022 | mhall | 2016-06-01 10:11:53 +1200 (Wed, 01 Jun 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/VisibleLayout.java
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/BaseExecutionEnvironment.java
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/FlowRunner.java
+
+Added a method to BaseExecutionEnvironment that allows applications to get the preferred default flow executor for the environment (subclasses can override to provide their own preferred default executor if FlowRunner is not suitable).
+------------------------------------------------------------------------
+r13026 | mhall | 2016-06-01 10:17:16 +1200 (Wed, 01 Jun 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/ExecutionEnvironment.java
+
+Small javadoc improvement
+------------------------------------------------------------------------
+r13030 | mhall | 2016-06-01 16:44:11 +1200 (Wed, 01 Jun 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/DataVisualizerInteractiveView.java
+
+Interactive viewer for DataVisualizer was not providing settings - fixed
+------------------------------------------------------------------------
+r13034 | mhall | 2016-06-02 10:34:35 +1200 (Thu, 02 Jun 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/DataVisualizerInteractiveView.java
+
+Now applies the settings when first opened
+------------------------------------------------------------------------
+r13046 | mhall | 2016-06-06 22:10:45 +1200 (Mon, 06 Jun 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/Classifier.java
+
+Fixed a bug in the set method for updating an incremental classifier
+------------------------------------------------------------------------
+r13062 | mhall | 2016-06-15 09:57:07 +1200 (Wed, 15 Jun 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/LayoutPanel.java
+
+Fixed a bug where a component could be connected to itself
+------------------------------------------------------------------------
+r13066 | mhall | 2016-06-26 15:08:32 +1200 (Sun, 26 Jun 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/Saver.java
+
+Fixed a bug where the relation name was being used as the table name even when the option for this was set to false
+------------------------------------------------------------------------
+r13070 | mhall | 2016-06-27 16:35:51 +1200 (Mon, 27 Jun 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/misc/InputMappedClassifier.java
+
+classifyInstance() and distributionForInstance() are not thread safe due to constructMappedInstance() not being thread safe. Made constructMappedInstance() synchronized to avoid concurrency problems
+------------------------------------------------------------------------
+r13074 | mhall | 2016-06-28 20:05:28 +1200 (Tue, 28 Jun 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/EnvironmentField.java
+
+Fixed a feedback affect that made it very difficult to enter ranges for range properties (when entering a comma it would disappear unless the next number was typed very quickly in succession).
+------------------------------------------------------------------------
+r13088 | mhall | 2016-07-01 16:58:07 +1200 (Fri, 01 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/Classifier.java
+
+Fixed a NPE that could occur when processing training and test sets coming from separate data sources
+------------------------------------------------------------------------
+r13092 | mhall | 2016-07-01 19:54:20 +1200 (Fri, 01 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/PredictionAppender.java
+
+Fixed a bug where instances in the output format, instead of original format, were being passed to the model for prediction
+------------------------------------------------------------------------
+r13096 | mhall | 2016-07-04 14:50:07 +1200 (Mon, 04 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/arffviewer/ArffPanel.java
+
+Fixed an NPE that would occur under certain circumstances when replacing values with missing value
+------------------------------------------------------------------------
+r13101 | mhall | 2016-07-06 10:02:58 +1200 (Wed, 06 Jul 2016) | 1 line
+Changed paths:
+   A /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/AlterRelationName.java
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/steps.props
+
+Added a relation name modifier step
+------------------------------------------------------------------------
+r13105 | mhall | 2016-07-14 11:10:00 +1200 (Thu, 14 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/Classifier.java
+
+Classifier step was not handling an InputMappedClassifier (which loads a serialized model) correctly in the case where there is just a single incoming testSet connection - fixed
+------------------------------------------------------------------------
+r13109 | mhall | 2016-07-14 14:16:50 +1200 (Thu, 14 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/ClassifierPerformanceEvaluator.java
+
+Now throws an exception if the incoming batch classifier is null
+------------------------------------------------------------------------
+r13113 | mhall | 2016-07-14 14:20:53 +1200 (Thu, 14 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/ResultHistoryPanel.java
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/TextViewerInteractiveView.java
+
+Added a facility to register a callback for list deletions to ResultHistoryPanel. Deleting a single entry in TextViewer now actually sticks when closing and re-opening the viewer in the GUI Knowledge Flow
+------------------------------------------------------------------------
+r13117 | mhall | 2016-07-15 12:09:24 +1200 (Fri, 15 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/ResultHistoryPanel.java
+
+Extended the entryDeleted() method in the RDeleteListener interface to take both the name and index of the entry deleted from the results list
+------------------------------------------------------------------------
+r13121 | mhall | 2016-07-15 12:11:13 +1200 (Fri, 15 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/AttributeSummarizerInteractiveView.java
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/CostBenefitAnalysisInteractiveView.java
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/DataVisualizerInteractiveView.java
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/GraphViewerInteractiveView.java
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/ImageViewerInteractiveView.java
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/ScatterPlotMatrixInteractiveView.java
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/TextViewerInteractiveView.java
+
+Now handles the delete key press correctly in the result list
+------------------------------------------------------------------------
+r13125 | mhall | 2016-07-19 15:14:49 +1200 (Tue, 19 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/KnowledgeFlowApp.java
+
+Execution environment setting picklist is now a LinkedList because the XML serialization does not support ArrayList
+------------------------------------------------------------------------
+r13129 | mhall | 2016-07-21 15:06:53 +1200 (Thu, 21 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/ClassAssigner.java
+
+Fixed a bug in class assigning that affected streaming data containing string attributes
+------------------------------------------------------------------------
+r13133 | mhall | 2016-07-22 10:55:30 +1200 (Fri, 22 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/FileEnvironmentField.java
+
+Fixed a bug where '.' was returned when the field was empty in the case where the editor has been configured for files only (rather than directories)
+------------------------------------------------------------------------
+r13137 | mhall | 2016-07-22 10:57:56 +1200 (Fri, 22 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/ClassifierPerformanceEvaluator.java
+
+Was not handling BatchPredictor correctly; was not checking implementsMoreEfficientBatchPrediciton() - fixed
+------------------------------------------------------------------------
+r13141 | mhall | 2016-07-23 20:48:36 +1200 (Sat, 23 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/BaseExecutionEnvironment.java
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/FlowRunner.java
+
+Small tweaks to the flow busy monitor and executor service shutdown process
+------------------------------------------------------------------------
+r13145 | mhall | 2016-07-23 20:53:30 +1200 (Sat, 23 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/Classifier.java
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/ClustererPerformanceEvaluator.java
+
+Classifier was not setting its busy status when processing just a single incoming test set - fixed. ClustererPerformanceEvaluator was duplicating training evaluation results in the output generated for test sets - fixed.
+------------------------------------------------------------------------
+r13149 | mhall | 2016-07-25 13:45:40 +1200 (Mon, 25 Jul 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/Filter.java
+
+Filter step now uses correct icons for those built-in filters that have custom icons.
+------------------------------------------------------------------------
+r13153 | mhall | 2016-08-01 15:44:47 +1200 (Mon, 01 Aug 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/TrainTestSplitMaker.java
+
+Added an option to preserve instance order when making the split
+------------------------------------------------------------------------
+r13157 | mhall | 2016-08-04 14:49:50 +1200 (Thu, 04 Aug 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/meta/LogitBoost.java
+
+Removed the buggy option settings for batch size from LogitBoost as they were returning an empty string from batch size. These methods are now in AbstractClassifier, plus LogitBoost now returns true from implementsMoreEfficientBatchPrediction()
+------------------------------------------------------------------------
+r13167 | mhall | 2016-08-10 11:17:04 +1200 (Wed, 10 Aug 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/explorer/ClassifierPanel.java
+
+Fixed a bug in the holdout evaluation textual output
+------------------------------------------------------------------------
+r13171 | mhall | 2016-08-12 16:07:48 +1200 (Fri, 12 Aug 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/core/WekaPackageManager.java
+
+Package manager now completely deletes the existing repCache directory before performing a cache refresh. This should allow for outdated/deprecated packages to be removed from the central repository (and hence the list in the package manager). If a user happens to have such a package installed, it will then appear to be an 'unofficial' package
+------------------------------------------------------------------------
+r13176 | mhall | 2016-08-18 20:04:03 +1200 (Thu, 18 Aug 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/SerializedModelSaver.java
+
+Fixed a bug where the training data header was not getting saved for incremental models
+------------------------------------------------------------------------
+r13179 | mhall | 2016-08-18 20:06:13 +1200 (Thu, 18 Aug 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/clusterers/HierarchicalClusterer.java
+
+Fixed bug in globalInfo() method.
+------------------------------------------------------------------------
+r13191 | mhall | 2016-08-24 16:14:02 +1200 (Wed, 24 Aug 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/meta/Bagging.java
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/trees/RandomForest.java
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/trees/RandomTree.java
+
+Added an option to output the average-impurity-decrease-based attribute importance ranking
+------------------------------------------------------------------------
+r13210 | mhall | 2016-08-25 22:26:19 +1200 (Thu, 25 Aug 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/knowledgeflow/steps/DataGenerator.java
+
+Fixed a bug in the overall throughput status
+------------------------------------------------------------------------
+r13213 | mhall | 2016-08-25 22:29:45 +1200 (Thu, 25 Aug 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/GUIChooserApp.java
+
+The Mac menu bar in TigerJython can be removed by changing the look and feel. When setting L&F to the empty string in TigerJython's configuration file, TigerJython will not change the L&F and simply use WEKA's one (e.g., Nimbus)! However, bad things still happen if users change the L&F manually in TigerJython via the preferences.
+------------------------------------------------------------------------
+r13224 | mhall | 2016-08-26 22:35:27 +1200 (Fri, 26 Aug 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/FileEnvironmentField.java
+   M /branches/stable-3-8/weka/src/main/java/weka/gui/knowledgeflow/steps/LoaderStepEditorDialog.java
+
+Added a method to set the file filter to be pre-selected in the drop down box in FileEnvironmentField. File chooser for Loaders in the Knowledge Flow now shows loader-specific file filters
+------------------------------------------------------------------------
+r13280 | mhall | 2016-09-02 13:47:58 +1200 (Fri, 02 Sep 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/functions/SGDText.java
+
+Fixed a bug in the document length normalization process
+------------------------------------------------------------------------
+r13283 | mhall | 2016-09-02 13:48:26 +1200 (Fri, 02 Sep 2016) | 1 line
+Changed paths:
+   M /branches/stable-3-8/weka/src/main/java/weka/classifiers/bayes/NaiveBayesMultinomialText.java
+
+Fixed a bug in the document length normalization process
+------------------------------------------------------------------------

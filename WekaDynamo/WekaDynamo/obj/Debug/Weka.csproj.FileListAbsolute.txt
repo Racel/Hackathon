@@ -1,0 +1,9 @@
+\\psf\home\documents\visual studio 2015\Projects\Weka\Weka\bin\Debug\Weka.dll
+\\psf\home\documents\visual studio 2015\Projects\Weka\Weka\bin\Debug\Weka.pdb
+\\psf\home\documents\visual studio 2015\Projects\Weka\Weka\obj\Debug\Weka.dll
+\\psf\home\documents\visual studio 2015\Projects\Weka\Weka\obj\Debug\Weka.pdb
+C:\Hackathon\Weka\Weka\bin\Debug\Weka.dll
+C:\Hackathon\Weka\Weka\bin\Debug\Weka.pdb
+C:\Hackathon\Weka\Weka\obj\Debug\Weka.csprojResolveAssemblyReference.cache
+C:\Hackathon\Weka\Weka\obj\Debug\Weka.dll
+C:\Hackathon\Weka\Weka\obj\Debug\Weka.pdb
