@@ -31,7 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DynamoServices">
-      <HintPath>..\..\..\Program Files\Dynamo\Dynamo Core\1.1\DynamoServices.dll</HintPath>
+      <HintPath>..\..\..\..\Program Files\Dynamo\Dynamo Core\1.2\DynamoServices.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Core">
       <HintPath>..\..\ikvmbin-7.2.4630.5\ikvm-7.2.4630.5\bin\IKVM.OpenJDK.Core.dll</HintPath>
@@ -45,7 +45,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="weka">
-      <HintPath>C:\Hackathon\stable-3-8\weka\weka.dll</HintPath>
+      <HintPath>..\..\stable-3-8\weka\weka.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
